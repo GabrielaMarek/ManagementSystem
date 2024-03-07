@@ -15,8 +15,32 @@ namespace ManagementSystem
         public Form1()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '*';
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "admin" && txtPassword.Text == "password")
+            {
+                labelError.Visible = false;
+                Dashboard ds = new Dashboard();
+                this.Hide();
+                ds.Show();
+            }
+            else
+            {
+                labelError.Visible = true;
+                txtUsername.Clear();
+                txtPassword.Clear();
+            }
         }
     }
+
 
     public class PlaceHolderTextBox : TextBox
     {

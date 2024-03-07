@@ -32,67 +32,99 @@ namespace ManagementSystem
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
-            this.placeHolderTextBox2 = new ManagementSystem.PlaceHolderTextBox();
-            this.placeHolderTextBox1 = new ManagementSystem.PlaceHolderTextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.labelError = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.txtUsername = new ManagementSystem.PlaceHolderTextBox();
+            this.txtPassword = new ManagementSystem.PlaceHolderTextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(72)))), ((int)(((byte)(165)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(92)))), ((int)(((byte)(235)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(1235, 615);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(520, 143);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "LOGIN";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLogin.AutoSize = true;
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(72)))), ((int)(((byte)(165)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(92)))), ((int)(((byte)(235)))));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLogin.Location = new System.Drawing.Point(1235, 652);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(520, 143);
+            this.btnLogin.TabIndex = 0;
+            this.btnLogin.Text = "LOGIN";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
-            // placeHolderTextBox2
+            // labelError
             // 
-            this.placeHolderTextBox2.BackColor = System.Drawing.Color.White;
-            this.placeHolderTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.placeHolderTextBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic);
-            this.placeHolderTextBox2.ForeColor = System.Drawing.Color.Gray;
-            this.placeHolderTextBox2.Location = new System.Drawing.Point(1177, 440);
-            this.placeHolderTextBox2.Multiline = true;
-            this.placeHolderTextBox2.Name = "placeHolderTextBox2";
-            this.placeHolderTextBox2.PlaceHolderText = "Password";
-            this.placeHolderTextBox2.Size = new System.Drawing.Size(646, 107);
-            this.placeHolderTextBox2.TabIndex = 1;
-            this.placeHolderTextBox2.Text = "Password";
+            this.labelError.BackColor = System.Drawing.Color.Transparent;
+            this.labelError.Font = new System.Drawing.Font("MS UI Gothic", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(1235, 798);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(520, 61);
+            this.labelError.TabIndex = 2;
+            this.labelError.Text = "Wrong username or password";
+            this.labelError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelError.Visible = false;
             // 
-            // placeHolderTextBox1
+            // btnExit
             // 
-            this.placeHolderTextBox1.BackColor = System.Drawing.Color.White;
-            this.placeHolderTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.placeHolderTextBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic);
-            this.placeHolderTextBox1.ForeColor = System.Drawing.Color.Gray;
-            this.placeHolderTextBox1.Location = new System.Drawing.Point(1176, 279);
-            this.placeHolderTextBox1.Multiline = true;
-            this.placeHolderTextBox1.Name = "placeHolderTextBox1";
-            this.placeHolderTextBox1.PlaceHolderText = "Username";
-            this.placeHolderTextBox1.Size = new System.Drawing.Size(646, 107);
-            this.placeHolderTextBox1.TabIndex = 0;
-            this.placeHolderTextBox1.Text = "Username";
+            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnExit.ForeColor = System.Drawing.Color.Red;
+            this.btnExit.Location = new System.Drawing.Point(1781, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(95, 93);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic);
+            this.txtUsername.ForeColor = System.Drawing.Color.Gray;
+            this.txtUsername.Location = new System.Drawing.Point(1182, 275);
+            this.txtUsername.Multiline = true;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.PlaceHolderText = "Username";
+            this.txtUsername.Size = new System.Drawing.Size(646, 107);
+            this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "Username";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic);
+            this.txtPassword.ForeColor = System.Drawing.Color.Gray;
+            this.txtPassword.Location = new System.Drawing.Point(1182, 441);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PlaceHolderText = "Password";
+            this.txtPassword.Size = new System.Drawing.Size(646, 107);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "Password";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1888, 992);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.placeHolderTextBox2);
-            this.Controls.Add(this.placeHolderTextBox1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.labelError);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.btnLogin);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -102,9 +134,11 @@ namespace ManagementSystem
 
         #endregion
 
-        private PlaceHolderTextBox placeHolderTextBox1;
-        private PlaceHolderTextBox placeHolderTextBox2;
-        private System.Windows.Forms.Button button1;
+        private PlaceHolderTextBox txtUsername;
+        private PlaceHolderTextBox txtPassword;
+        private Button btnLogin;
+        private Label labelError;
+        private Button btnExit;
     }
 }
 
