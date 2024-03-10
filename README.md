@@ -10,4 +10,5 @@ Users can log in using the username "admin" and the password "password" to acces
 - **Error Handling**: Displays an error message for incorrect username or password.
 - **Exit Button**: Allows users to exit the application.
   
- ![login](https://github.com/GabrielaMarek/ManagementSystem/assets/148369562/4ddad16d-d4ab-4acd-bd88-c6286b3f3db3)
+ ![image](https://github.com/GabrielaMarek/ManagementSystem/assets/148369562/d26ca4ac-9c52-449b-84b1-bd75c6227da9)
+
