@@ -18,6 +18,9 @@ namespace ManagementSystem
         {
             InitializeComponent();
             txtPassword.PasswordChar = '*';
+            txtUsername.AcceptsReturn = false;
+            txtPassword.AcceptsReturn = false;
+            this.AcceptButton = btnLogin;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -25,7 +28,30 @@ namespace ManagementSystem
             Application.Exit();
         }
 
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; 
+                txtPassword.Focus(); 
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; 
+                Login(); 
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
+        {
+            Login(); 
+        }
+
+        private void Login()
         {
             if (txtUsername.Text == "admin" && txtPassword.Text == "password")
             {
@@ -69,8 +95,10 @@ namespace ManagementSystem
             labelError.Location = new Point(labelX, labelY);
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 
 
