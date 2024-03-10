@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ManagementSystem.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,6 +41,36 @@ namespace ManagementSystem
                 txtPassword.Clear();
             }
         }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+
+            btnExit.Location = new Point(formWidth - 60, 12);
+            btnExit.Size = new Size(45, 43);
+
+            int middleY = (this.Height - (txtUsername.Height + txtPassword.Height + btnLogin.Height + 20 + 50 + 20)) / 2;
+
+            int shiftRight = 30; 
+
+            txtUsername.Location = new Point(formWidth - txtUsername.Width - 20 - shiftRight, middleY);
+            txtUsername.Size = new Size(formWidth / 3, 50);
+
+            txtPassword.Location = new Point(formWidth - txtPassword.Width - 20 - shiftRight, txtUsername.Bottom + 20);
+            txtPassword.Size = new Size(formWidth / 3, 50);
+
+            btnLogin.Location = new Point(formWidth - btnLogin.Width - 20 - shiftRight, txtPassword.Bottom + 20);
+            btnLogin.Size = new Size(formWidth / 3, 50);
+
+            int labelX = btnLogin.Location.X + (btnLogin.Width - labelError.Width) / 2;
+            int labelY = btnLogin.Bottom + 20;
+
+            labelError.Location = new Point(labelX, labelY);
+        }
+
+
+
     }
 
 
